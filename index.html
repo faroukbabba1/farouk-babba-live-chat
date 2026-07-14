@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farouk Babba Live Chat</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b141a;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+width:90%;
+max-width:400px;
+background:#202c33;
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
+
+h1{
+color:#25D366;
+margin-bottom:10px;
+}
+
+p{
+color:white;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+background:#2a3942;
+color:white;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#25D366;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1fa855;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>FAROUK BABBA</h1>
+
+<p>Welcome to Live Chat</p>
+
+<input type="text" id="name" placeholder="Enter Your Full Name">
+
+<input type="tel" id="phone" placeholder="Phone Number (Optional)">
+
+<button onclick="startChat()">
+START CHAT
+</button>
+
+</div>
+
+<script>
+function startChat(){
+
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Please enter your name.");
+return;
+}
+
+localStorage.setItem("name",name);
+localStorage.setItem("phone",document.getElementById("phone").value);
+
+window.location="chat.html";
+
+}
+</script>
+
+</body>
+</html>
