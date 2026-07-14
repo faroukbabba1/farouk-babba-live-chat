@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farouk Babba Live Chat</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b141a;
+height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+.header{
+background:#202c33;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+font-size:18px;
+font-weight:bold;
+}
+
+.header img{
+width:40px;
+height:40px;
+border-radius:50%;
+margin-right:10px;
+}
+
+.messages{
+flex:1;
+padding:15px;
+overflow-y:auto;
+background:#111b21;
+}
+
+.msg{
+max-width:75%;
+padding:10px 15px;
+margin:10px 0;
+border-radius:10px;
+word-wrap:break-word;
+}
+
+.me{
+background:#005c4b;
+margin-left:auto;
+color:white;
+}
+
+.you{
+background:#202c33;
+color:white;
+}
+
+.footer{
+display:flex;
+padding:10px;
+background:#202c33;
+}
+
+.footer input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:25px;
+background:#2a3942;
+color:white;
+font-size:16px;
+outline:none;
+}
+
+.footer button{
+margin-left:10px;
+padding:12px 20px;
+border:none;
+border-radius:25px;
+background:#25D366;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💬 FAROUK BABBA LIVE CHAT
+</div>
+
+<div class="messages" id="messages">
+
+<div class="msg you">
+Welcome 👋<br>
+How can I help you today?
+</div>
+
+</div>
+
+<div class="footer">
+
+<input
+type="text"
+id="message"
+placeholder="Type a message...">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+<script>
+
+function sendMessage(){
+
+let input=document.getElementById("message");
+
+if(input.value=="") return;
+
+let box=document.createElement("div");
+
+box.className="msg me";
+
+box.innerHTML=input.value;
+
+document.getElementById("messages").appendChild(box);
+
+input.value="";
+
+document.getElementById("messages").scrollTop=
+document.getElementById("messages").scrollHeight;
+
+}
+
+</script>
+
+</body>
+</html>
